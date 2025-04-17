@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FiSidebar } from "react-icons/fi";
 import {
   Home as HomeIcon,
   Activity,
@@ -174,12 +175,13 @@ const Home = () => {
           isExpanded ? "md:ml-64" : "ml-20"
         } w-full p-8 bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen text-white`}
       >
-        <button
-          className="mb-6 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          Toggle Sidebar
-        </button>
+     <button
+  className="mb-6 px-4 py-2 bg-blue-500/10 text-white rounded hover:bg-gray-600 border border-blue-800"
+  onClick={() => setIsExpanded(!isExpanded)}
+>
+  <FiSidebar size={29} />
+</button>
+
 
         <h1 className="text-4xl font-extrabold mb-8 text-center tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
           System Dashboard
