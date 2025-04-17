@@ -14,11 +14,9 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 // Sidebar Component
 const menuItems = [
   { icon: HomeIcon, label: "Overview" },
-  { icon: Cpu, label: "CPU" },
-  { icon: BarChart3, label: "Memory" },
-  { icon: HardDrive, label: "Storage" },
-  { icon: Network, label: "Network" },
-  { icon: Activity, label: "Processes" },
+ 
+  { icon: HardDrive, label: "Cloud Storage" },
+  { icon: Network, label: "Media Server" },
   { icon: Settings, label: "Settings" },
 ];
 
@@ -167,17 +165,14 @@ const Home = () => {
           <PieStatCard title="Disk Usage" used={11.0} total={18.2} color="#EC4899" unit="GiB" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <BarStat title="DOWNLOAD" value="46 bytes/s" total="95.4 MiB" />
-          <BarStat title="UPLOAD" value="66 bytes/s" total="4.3 MiB" />
-        </div>
+       
 
         <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-700/50">
           <h1 className="text-4xl font-bold mb-4 text-blue-300">System Info</h1>
           <ul className="space-y-2 text-xl text-gray-300">
             <li><span className="font-medium text-white">Hostname:</span> swap</li>
             <li><span className="font-medium text-white">Platform:</span> linux x86_64</li>
-            <li><span className="font-medium text-white">Distribution:</span> Ubuntu 20.04 LTS</li>
+            <li><span className="font-medium text-white">Distribution:</span> Debian12</li>
             <li><span className="font-medium text-white">Kernel Release:</span> 5.4.0-40-generic</li>
             <li><span className="font-medium text-white">CPU Model:</span> Intel(R) Core(TM) i3-2350M CPU</li>
             <li><span className="font-medium text-white">CPU Core:</span> 4</li>
