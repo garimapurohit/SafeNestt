@@ -1,53 +1,102 @@
-import React from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
-const Home = () => {
+
+
+import React, { useState } from "react";
+import {
+  Home as HomeIcon,
+  Activity,
+  HardDrive,
+  Cpu,
+  BarChart3,
+  Network,
+  Settings,
+} from "lucide-react";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+
+// Sidebar Component
+const menuItems = [
+  { icon: HomeIcon, label: "Overview" },
+  { icon: Cpu, label: "CPU" },
+  { icon: BarChart3, label: "Memory" },
+  { icon: HardDrive, label: "Storage" },
+  { icon: Network, label: "Network" },
+  { icon: Activity, label: "Processes" },
+  { icon: Settings, label: "Settings" },
+];
+
+const Sidebar = ({ isExpanded, activeIndex, setActiveIndex }) => {
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen p-8 font-sans">
-      <h1 className="text-4xl font-extrabold mb-8 text-center tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-        System Dashboard
-      </h1>
+    <div
+      className={`h-screen fixed left-0 top-0 z-40 bg-gray-900/95 backdrop-blur-md border-r border-gray-800 transition-all duration-300 ease-in-out ${
+        isExpanded ? "w-64" : "w-20"
+      }`}
+    >
+      <div className="flex flex-col h-full">
+        <div className="p-4">
+          <h2
+            className={`font-bold text-white transition-all duration-300 overflow-hidden ${
+              isExpanded ? "text-xl text-left" : "text-lg text-center"
+            }`}
+          >
+            System
+          </h2>
+        </div>
 
-      {/* Top Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <PieStatCard title="CPU Usage" used={2} total={100} color="#34D399" unit="%" />
-        <PieStatCard title="Memory Usage" used={1.4} total={3.8} color="#FBBF24" unit="GiB" />
-        <PieStatCard title="Disk Usage" used={11.0} total={18.2} color="#EC4899" unit="GiB" />
-      </div>
+        <nav className="flex-1 px-2 py-4 space-y-1 relative">
+          {menuItems.map((item, index) => {
+            const isActive = index === activeIndex;
 
-      {/* Download & Upload */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <BarStat title="DOWNLOAD" value="46 bytes/s" total="95.4 MiB" />
-        <BarStat title="UPLOAD" value="66 bytes/s" total="4.3 MiB" />
-      </div>
+            return (
+              <div key={index} className="relative group">
+                <button
+                  onClick={() => setActiveIndex(index)}
+                  aria-label={item.label}
+                  title={item.label}
+                  className={`w-full flex items-center px-4 py-3 rounded-lg transition-all duration-200 ${
+                    isActive
+                      ? "bg-blue-500/10 text-blue-400"
+                      : "text-gray-400"
+                  } hover:bg-gray-800/50 hover:text-blue-400`}
+                >
+                  <item.icon size={20} />
+                  <span
+                    className={`ml-4 whitespace-nowrap transition-all duration-300 ${
+                      !isExpanded ? "opacity-0 w-0 overflow-hidden" : ""
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                </button>
 
-      {/* System Info */}
-      <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-700/50">
-        <h2 className="text-2xl font-semibold mb-4 text-blue-300">System Info</h2>
-        <ul className="space-y-2 text-sm text-gray-300">
-          <li><span className="font-medium text-white">Hostname:</span> swap</li>
-          <li><span className="font-medium text-white">Platform:</span> linux x86_64</li>
-          <li><span className="font-medium text-white">Distribution:</span> Ubuntu 20.04 LTS</li>
-          <li><span className="font-medium text-white">Kernel Release:</span> 5.4.0-40-generic</li>
-          <li><span className="font-medium text-white">CPU Model:</span> Intel(R) Core(TM) i3-2350M CPU</li>
-          <li><span className="font-medium text-white">CPU Core:</span> 4</li>
-          <li><span className="font-medium text-white">CPU Speed:</span> 2.30GHz</li>
-        </ul>
+                {!isExpanded && (
+                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 hidden group-hover:block z-50">
+                    <div className="bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg">
+                      {item.label}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </nav>
       </div>
     </div>
   );
 };
 
+// PieStatCard Component
 const PieStatCard = ({ title, used, total, color, unit }) => {
   const data = [
-    { name: 'Used', value: used },
-    { name: 'Free', value: total - used },
+    { name: "Used", value: used },
+    { name: "Free", value: total - used },
   ];
-  const COLORS = [color, '#4B5563'];
+  const COLORS = [color, "#4B5563"];
 
   return (
     <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-700/50 transform hover:scale-105 transition-transform duration-300">
-      <h2 className="text-xl font-semibold mb-3 text-center text-gray-100">{title}</h2>
+      <h2 className="text-xl font-semibold mb-3 text-center text-gray-100">
+        {title}
+      </h2>
       <div className="w-full h-48">
         <ResponsiveContainer>
           <PieChart>
@@ -72,6 +121,7 @@ const PieStatCard = ({ title, used, total, color, unit }) => {
   );
 };
 
+// BarStat Component
 const BarStat = ({ title, value, total }) => {
   return (
     <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-700/50">
@@ -79,11 +129,64 @@ const BarStat = ({ title, value, total }) => {
       <div className="h-4 bg-gray-700 rounded-full mb-3 overflow-hidden">
         <div
           className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-500"
-          style={{ width: '20%' }}
+          style={{ width: "20%" }}
         />
       </div>
       <p className="text-sm text-gray-400">Total: {total}</p>
       <p className="text-sm text-gray-300">{value}</p>
+    </div>
+  );
+};
+
+// Home Dashboard
+const Home = () => {
+  const [isExpanded, setIsExpanded] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  return (
+    <div className="flex">
+      <Sidebar isExpanded={isExpanded} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+
+      <main
+        className={`transition-all duration-300 ml-20 ${
+          isExpanded ? "md:ml-64" : "ml-20"
+        } w-full p-8 bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen text-white`}
+      >
+        <button
+          className="mb-6 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          Toggle Sidebar
+        </button>
+
+        <h1 className="text-4xl font-extrabold mb-8 text-center tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+          System Dashboard
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <PieStatCard title="CPU Usage" used={2} total={100} color="#34D399" unit="%" />
+          <PieStatCard title="Memory Usage" used={1.4} total={3.8} color="#FBBF24" unit="GiB" />
+          <PieStatCard title="Disk Usage" used={11.0} total={18.2} color="#EC4899" unit="GiB" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <BarStat title="DOWNLOAD" value="46 bytes/s" total="95.4 MiB" />
+          <BarStat title="UPLOAD" value="66 bytes/s" total="4.3 MiB" />
+        </div>
+
+        <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-700/50">
+          <h2 className="text-2xl font-semibold mb-4 text-blue-300">System Info</h2>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li><span className="font-medium text-white">Hostname:</span> swap</li>
+            <li><span className="font-medium text-white">Platform:</span> linux x86_64</li>
+            <li><span className="font-medium text-white">Distribution:</span> Ubuntu 20.04 LTS</li>
+            <li><span className="font-medium text-white">Kernel Release:</span> 5.4.0-40-generic</li>
+            <li><span className="font-medium text-white">CPU Model:</span> Intel(R) Core(TM) i3-2350M CPU</li>
+            <li><span className="font-medium text-white">CPU Core:</span> 4</li>
+            <li><span className="font-medium text-white">CPU Speed:</span> 2.30GHz</li>
+          </ul>
+        </div>
+      </main>
     </div>
   );
 };
