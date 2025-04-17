@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   Home as HomeIcon,
@@ -14,9 +13,16 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 // Sidebar Component
 const menuItems = [
   { icon: HomeIcon, label: "Overview" },
- 
-  { icon: HardDrive, label: "Cloud Storage" },
-  { icon: Network, label: "Media Server" },
+  {
+    icon: HardDrive,
+    label: "Cloud Storage",
+    link: "http://10.66.66.1:8081",
+  },
+  {
+    icon: Network,
+    label: "Media Server",
+    link: "http://10.66.66.1:8096",
+  },
   { icon: Settings, label: "Settings" },
 ];
 
@@ -41,13 +47,9 @@ const Sidebar = ({ isExpanded, activeIndex, setActiveIndex }) => {
         <nav className="flex-1 px-2 py-4 space-y-1 relative">
           {menuItems.map((item, index) => {
             const isActive = index === activeIndex;
-
-            return (
+            const content = (
               <div key={index} className="relative group">
-                <button
-                  onClick={() => setActiveIndex(index)}
-                  aria-label={item.label}
-                  title={item.label}
+                <div
                   className={`w-full flex items-center px-4 py-3 rounded-lg transition-all duration-200 ${
                     isActive
                       ? "bg-blue-500/10 text-blue-400"
@@ -62,7 +64,7 @@ const Sidebar = ({ isExpanded, activeIndex, setActiveIndex }) => {
                   >
                     {item.label}
                   </span>
-                </button>
+                </div>
 
                 {!isExpanded && (
                   <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 hidden group-hover:block z-50">
@@ -72,6 +74,30 @@ const Sidebar = ({ isExpanded, activeIndex, setActiveIndex }) => {
                   </div>
                 )}
               </div>
+            );
+
+            // If it's a link, wrap in <a>
+            return item.link ? (
+              <a
+                key={index}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.label}
+                title={item.label}
+              >
+                {content}
+              </a>
+            ) : (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                aria-label={item.label}
+                title={item.label}
+                className="w-full text-left"
+              >
+                {content}
+              </button>
             );
           })}
         </nav>
@@ -164,8 +190,6 @@ const Home = () => {
           <PieStatCard title="Memory Usage" used={1.4} total={3.8} color="#FBBF24" unit="GiB" />
           <PieStatCard title="Disk Usage" used={11.0} total={18.2} color="#EC4899" unit="GiB" />
         </div>
-
-       
 
         <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-700/50">
           <h1 className="text-4xl font-bold mb-4 text-blue-300">System Info</h1>
