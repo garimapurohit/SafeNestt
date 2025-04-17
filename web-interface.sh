@@ -1,2 +1,2 @@
-cd Frontend
+cd SafeNest
 npm run dev & cd ..
