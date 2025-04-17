@@ -1,6 +1,4 @@
 
-
-
 import React, { useState } from "react";
 import {
   Home as HomeIcon,
@@ -175,8 +173,8 @@ const Home = () => {
         </div>
 
         <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-700/50">
-          <h2 className="text-2xl font-semibold mb-4 text-blue-300">System Info</h2>
-          <ul className="space-y-2 text-sm text-gray-300">
+          <h1 className="text-4xl font-bold mb-4 text-blue-300">System Info</h1>
+          <ul className="space-y-2 text-xl text-gray-300">
             <li><span className="font-medium text-white">Hostname:</span> swap</li>
             <li><span className="font-medium text-white">Platform:</span> linux x86_64</li>
             <li><span className="font-medium text-white">Distribution:</span> Ubuntu 20.04 LTS</li>
