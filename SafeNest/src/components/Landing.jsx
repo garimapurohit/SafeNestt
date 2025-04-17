@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
   // Prevent background scrolling
@@ -39,9 +40,12 @@ const Landing = () => {
           <button className="bg-white text-red-700 px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-semibold">
             Details
           </button>
-          <button className="bg-white text-red-700 px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-semibold">
-            Back to safety
-          </button>
+          <Link
+  to="/home"
+  className="bg-white text-red-700 px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-semibold"
+>
+  Back to safety
+</Link>
         </div>
       </div>
     </div>
