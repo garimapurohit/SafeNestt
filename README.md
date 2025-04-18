@@ -73,7 +73,7 @@ SafeNest is a **private, modular digital ecosystem** designed to give users comp
 - Krish Mishra  
 - Garima Purohit  
 - Shreya Jaiswal  
-- Raashi  
+- Raashi Mathur
 
 ---
 
