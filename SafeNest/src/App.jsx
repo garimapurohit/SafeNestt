@@ -7,6 +7,7 @@ import Landing from './components/Landing';
 function App() {
   return (
     <Router>
+      
       <div>
       
       <Routes>
