@@ -83,4 +83,4 @@ SafeNest is a **private, modular digital ecosystem** designed to give users comp
 
 ---
 
-> Built with 💡 passion and 🌍 sustainability in mind.
+> Built with 🧠 for 🌎.
