@@ -1,8 +1,8 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Landing from "./components/Landing"
+import Unsafe from "./components/Unsafe"
 import Home from "./components/Home"
-
+import Landing from './components/Landing';
 
 function App() {
   return (
@@ -10,8 +10,10 @@ function App() {
       <div>
       
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/unsafe" element={<Landing />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/unsafe" element={<Unsafe />} />
+        <Route path="/" element={<Landing />} />
+
         
       
       </Routes>
