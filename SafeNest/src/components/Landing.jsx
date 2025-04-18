@@ -138,8 +138,8 @@ const LandingPage = () => {
     <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl">
       Why limit it to just safety? Let's do much more!
     </p>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl">
-      {/* Flashcard 1: Jellyfin Media Hub */}
+    {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl">
+      {Flashcard 1: Jellyfin Media Hub }
       <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-700/50 transform hover:scale-105 transition-transform duration-300">
         <h2 className="text-2xl font-bold mb-4 text-blue-300">Create Your Own Netflix!</h2>
         <p className="text-sm text-gray-300 mb-3">Enjoy movies, TV, and music on any device using Jellyfin.</p>
@@ -150,7 +150,7 @@ const LandingPage = () => {
         </ul>
       </div>
 
-      {/* Flashcard 2: Cloud Storage */}
+      {}
       <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-700/50 transform hover:scale-105 transition-transform duration-300">
         <h2 className="text-2xl font-bold mb-4 text-blue-300">Deploy Your Own Cloud Storage!</h2>
         <p className="text-sm text-gray-300 mb-3">Like Google Drive, with full control over your data.</p>
@@ -161,7 +161,7 @@ const LandingPage = () => {
         </ul>
       </div>
 
-      {/* Flashcard 3: Docker Hosting */}
+      {}
       <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-700/50 transform hover:scale-105 transition-transform duration-300">
         <h2 className="text-2xl font-bold mb-4 text-blue-300">Your Imagination is the Limit!</h2>
         <p className="text-sm text-gray-300 mb-3">Host anything with simple Docker setup.</p>
@@ -172,7 +172,7 @@ const LandingPage = () => {
         </ul>
       </div>
     </div>
-    
+     */}
 
 <Link
   to="/home"
