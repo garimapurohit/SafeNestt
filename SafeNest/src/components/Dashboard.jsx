@@ -106,7 +106,6 @@ const Sidebar = ({ isExpanded, activeIndex, setActiveIndex }) => {
   );
 };
 
-// PieStatCard Component
 const PieStatCard = ({ title, used, total, color, unit }) => {
   const data = [
     { name: "Used", value: used },
