@@ -38,10 +38,10 @@ const Sidebar = ({ isExpanded, activeIndex, setActiveIndex }) => {
         <div className="p-4">
           <h2
             className={`font-bold text-white transition-all duration-300 overflow-hidden ${
-              isExpanded ? "text-xl text-left" : "text-lg text-center"
+              isExpanded ? "text-5xl text-left" : "text-lg text-center"
             }`}
           >
-            System
+            SafeNest
           </h2>
         </div>
 
