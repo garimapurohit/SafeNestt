@@ -4,25 +4,23 @@ import { Link } from 'react-router-dom';
 const LandingPage = () => {
   return (
     <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen font-sans">
-      {/* Hero Section */}
       <section className="flex flex-col items-center justify-center min-h-screen text-center px-4 py-16">
     <h1 className="text-5xl md:text-6xl font-extrabold mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-      SafeNest: Secure Your Home, Simplify Your Life
+      SafeNest: Leave your data security worries behind
     </h1>
-    <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl">
-      Why limit it to just safety? Let's do much more!
+    <p className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl">
     </p>
   <Link
   to="/home"
   className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mt-12"
 >
-  Get Started Now!
+  Get Started
 </Link>
 
 
     {/* Features Section */}
 <section className="py-16 px-4 md:px-8">
-  <h2 className="text-4xl font-bold text-center mb-12 text-gray-100">Why Choose SafeNest?</h2>
+  <h2 className="text-4xl font-bold text-center mb-12 text-gray-100">Why limit to security when you can go beyond?</h2>
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
     <FeatureCard
       title="Personalized Media Hub"
@@ -48,14 +46,6 @@ const LandingPage = () => {
   
 </section>
 </section>
-{/* <Link
-  to="/home"
-  className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mt-12"
->
-  Get Started Now!
-</Link> */}
-
-
       {/* Testimonial Section */}
       <section className="py-16 px-4 md:px-8 bg-gray-800/50 backdrop-blur-sm">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-100">What Our Customers Say</h2>
@@ -83,19 +73,14 @@ const LandingPage = () => {
 
       {/* CTA Section */}
       <section className="py-16 px-4 text-center playwrite-ro">
-  <h2 className="text-3xl font-bold mb-4 text-gray-100">
-    Ready to Transform Your Home?
-  </h2>
-  <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
+  <p className="text-4xl dancing-script text-center">
     Join thousands of satisfied customers and unlock the power of SafeNest today.
   </p>
-
+  <h2 className="text-4xl dancing-script text-center">
+    So you don't have to think bafore clicking 
+  </h2>
   
 </section>
-
-
-
-
 
       {/* Footer */}
       <footer className="bg-gray-900 py-8 px-4 text-center text-gray-400">

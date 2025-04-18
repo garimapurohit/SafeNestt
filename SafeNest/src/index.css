@@ -1,22 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 @import "tailwindcss";
-
-
-@font-face {
-  font-family: "Playwrite RO";
-  src: url("/fonts/PlaywriteRO.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-.playwrite-ro {
-  font-family: "Playwrite RO", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
 
 .dancing-script {
   font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }

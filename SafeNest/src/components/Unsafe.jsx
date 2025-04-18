@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 const Landing = () => {
-  // Prevent background scrolling
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
