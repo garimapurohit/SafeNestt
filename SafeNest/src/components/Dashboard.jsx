@@ -77,7 +77,6 @@ const Sidebar = ({ isExpanded, activeIndex, setActiveIndex }) => {
               </div>
             );
 
-            // If it's a link, wrap in <a>
             return item.link ? (
               <a
                 key={index}

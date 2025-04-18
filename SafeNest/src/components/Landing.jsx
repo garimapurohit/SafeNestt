@@ -236,27 +236,24 @@ const LandingPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 text-center">
-        <h2 className="text-3xl font-bold mb-4 text-gray-100">Ready to Transform Your Home?</h2>
-        <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
-          Join thousands of satisfied customers and unlock the power of SafeNest today.
-        </p>
-        <Link
-  to="/home"
-  className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 mt-12"
->
-  Get Started Now!
-</Link>
-      </section>
+      <section className="py-16 px-4 text-center playwrite-ro">
+  <h2 className="text-3xl font-bold mb-4 text-gray-100">
+    Ready to Transform Your Home?
+  </h2>
+  <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
+    Join thousands of satisfied customers and unlock the power of SafeNest today.
+  </p>
+
+  
+</section>
+
+
+
+
 
       {/* Footer */}
       <footer className="bg-gray-900 py-8 px-4 text-center text-gray-400">
         <p>© 2025 SafeNest. All rights reserved.</p>
-        <div className="mt-4 space-x-4">
-          <a href="#privacy" className="hover:text-gray-200">Privacy Policy</a>
-          <a href="#terms" className="hover:text-gray-200">Terms of Service</a>
-          <a href="#contact" className="hover:text-gray-200">Contact Us</a>
-        </div>
       </footer>
     </div>
   );
