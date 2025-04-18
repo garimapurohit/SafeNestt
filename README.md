@@ -22,6 +22,11 @@ SafeNest is a **private, modular digital ecosystem** designed to give users comp
 - **Eco-Friendly Design**: Repurpose old hardware to reduce e-waste.
 
 ---
+### About Us
+
+At **SafeNest**, we build secure, self-hosted solutions that empower users with digital freedom and privacy. Our mission goes beyond tech — we give old hardware a second life, reducing e-waste while delivering powerful, user-friendly tools for modern, sustainable living.
+          
+---
 
 ## 🔧 Core Components
 
