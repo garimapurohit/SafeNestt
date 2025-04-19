@@ -11,7 +11,7 @@ KEY_FILE = open("key","r")
 API_KEY = KEY_FILE.read()
 KEY_FILE.close()
 
-WARNING_PAGE_URL = "http://10.66.66.1/unsafe"  # change to your hosted warning page
+WARNING_PAGE_URL = "http://10.66.66.1:8080/unsafe"  # change to your hosted warning page
 SAFE_BROWSING_API = "https://safebrowsing.googleapis.com/v4/threatMatches:find?key=" + API_KEY
 
 # Logging
