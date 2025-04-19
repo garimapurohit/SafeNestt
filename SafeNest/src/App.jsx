@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<Dashboard />} />
         <Route path="/unsafe" element={<Unsafe />} />
-        <Route path="/" element={<Landing />} />
+        <Route path="/landing" element={<Landing />} />
 
         
       
